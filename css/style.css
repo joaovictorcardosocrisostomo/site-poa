@@ -780,13 +780,11 @@ picture {
   padding: 30px;
 }
 
-#equipamentos h2 {
+.titulo-equipamentos {
   font-family: "Outfit", sans-serif;
   font-size: clamp(2rem, 4vw, 3rem);
   color: var(--primary-dark);
   font-weight: 400;
-  padding-bottom: 50px;
-  margin-top: 50px;
 }
 
 .lista-equipamentos {
@@ -1022,7 +1020,6 @@ picture {
   font-size: clamp(2rem, 4vw, 3rem);
   color: var(--primary-dark);
   font-weight: 400;
-  margin-bottom: 50px;
 }
 
 /* --- MUDANÇA PRINCIPAL AQUI --- */
