@@ -12,7 +12,7 @@
   --bg-light: #f5f7ff;
   --bg-gradient-start: #1e88e5;
   --bg-gradient-end: #00b1c8;
-  --text-dark: #333;
+  --text-dark: #426f8b;
   --text-medium: #666;
   --border-color: rgba(0, 0, 0, 0.1);
   --border-radius: 8px;
@@ -32,7 +32,7 @@
   --bg-light: #e3f2fd;
   --bg-gradient-start: #0065a8;
   --bg-gradient-end: #00101b;
-  --text-dark: #1a1a1a;
+  --text-dark: #2c236d;
   --text-medium: #4a4a4a;
   --border-color: rgba(0, 0, 0, 0.15);
   --border-radius: 8px;
@@ -47,11 +47,11 @@
   --primary-dark: #00a040;
   --primary-darker: #006e2d;
   --secondary: #26c485;
-  --accent: #3bcdfa;
+  --accent: #3bfaae;
   --bg-light: #f1f8f4;
   --bg-gradient-start: #00c853;
   --bg-gradient-end: #016623;
-  --text-dark: #1b5e2d;
+  --text-dark: #227538;
   --text-medium: #4a7c5a;
   --border-color: rgba(0, 100, 50, 0.1);
   --border-radius: 8px;
@@ -70,7 +70,7 @@
   --bg-light: #ffebee;
   --bg-gradient-start: #d32f2f;
   --bg-gradient-end: #7b1010;
-  --text-dark: #5d1a1a;
+  --text-dark: #e30505;
   --text-medium: #8b3a3a;
   --border-color: rgba(200, 50, 50, 0.1);
   --border-radius: 8px;
@@ -89,7 +89,7 @@
   --bg-light: #ffe0b2;
   --bg-gradient-start: #ff7043;
   --bg-gradient-end: #bf360c;
-  --text-dark: #5d2817;
+  --text-dark: #c0500b;
   --text-medium: #8b5a2b;
   --border-color: rgba(230, 74, 25, 0.1);
   --border-radius: 8px;

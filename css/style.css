@@ -88,10 +88,33 @@ picture {
   overflow-x: visible !important; /* Mude para visible ou apague esta linha */
 }
 
+#logoHeader {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+#logoHeader > div {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  height: 100%;
+}
+
 .logo {
   height: 40px;
-  width: 100%;
+  width: auto;
   box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+  display: block;
 }
 
 .menu {
@@ -1167,16 +1190,11 @@ footer {
   padding: 3em;
 }
 
-.footer-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  gap: 1rem;
-}
-
 footer img {
   height: 3rem;
+}
+
+.logo-ufc {
   filter: brightness(0) invert(1);
 }
 
