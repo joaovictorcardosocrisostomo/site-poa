@@ -1120,45 +1120,6 @@ picture {
   height: auto;
 }
 
-/* Animações */
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
 footer {
   width: 100%;
   height: auto;
@@ -1478,18 +1439,6 @@ footer p {
   margin-top: 0.75rem;
 }
 
-/* Animações de membros */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .member-card {
   animation: fadeInUp 0.6s ease forwards;
 }
@@ -1525,6 +1474,92 @@ footer p {
 
   .galeria-livros {
     max-width: 1024px;
+  }
+
+  /* Noticias responsivas */
+  .noticias-scroll .noticia-card {
+    width: 400px;
+  }
+
+  .noticias-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Menu mobile e navegação */
+  .mobile-menu-btn {
+    display: block; /* Mostra o botão hambúrguer */
+  }
+
+  #menuHeader {
+    display: none !important; /* Esconde o menu de texto por padrão */
+  }
+
+  #menuHeader.mobile-menu-active {
+    display: flex !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    flex-direction: column;
+    background: white;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 9999;
+  }
+
+  .dropdown-gaveta {
+    right: auto;
+    left: 0;
+  }
+
+  /* Hero section no breakpoint 1024px */
+  .hero-container {
+    gap: 2rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-height: 560px;
+  }
+
+  .hero-content {
+    min-width: 0;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+  }
+
+  .ptext {
+    font-size: 1rem;
+  }
+
+  /* Coordenador section */
+  .links-externos-coordenador {
+    justify-content: center;
+  }
+
+  #coordenador {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #perfil-img {
+    width: 200px;
+  }
+
+  /* Equipamentos e Research sections */
+  .card-equipamentos {
+    grid-template-columns: 1fr;
+  }
+
+  .research-content {
+    grid-template-columns: 1fr;
+  }
+
+  .highlights-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1652,326 +1687,6 @@ footer p {
     justify-content: center;
     width: 100%;
     height: auto;
-  }
-}
-
-/* Responsivo original */
-@media (max-width: 700px) {
-  .timeline-vertical-section {
-    max-width: 100%;
-    height: 350px;
-  }
-  .timeline-vertical {
-    padding-left: 1rem;
-    max-width: 100%;
-  }
-  .timeline-year {
-    width: 45px;
-    font-size: 1.1rem;
-    margin-right: 1rem;
-  }
-  .timeline-details {
-    padding: 0.8rem 1rem;
-  }
-}
-
-/* ==================== SEÇÃO DE PESQUISA E EQUIPAMENTOS (Labs) ==================== */
-
-.research-section {
-  padding: 4rem 2rem;
-  background: white;
-}
-
-#research-section {
-  width: 100%;
-  height: auto;
-  scroll-margin-top: 100px;
-}
-
-#research-container {
-  padding: 30px;
-}
-
-#research-section h2 {
-  font-family: "Outfit", sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--primary-dark);
-  font-weight: 400;
-}
-
-.research-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-  margin-top: 3rem;
-}
-
-.research-text {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.research-text p {
-  font-size: 1.05rem;
-  color: var(--text-medium);
-  line-height: 1.8;
-  margin: 0;
-}
-
-.research-text strong {
-  color: var(--primary-dark);
-  font-weight: 600;
-}
-
-.research-highlights {
-  padding: 2rem;
-  background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
-  border-left: 4px solid var(--primary);
-  border-radius: 8px;
-}
-
-.research-highlights h3 {
-  font-family: "Outfit", sans-serif;
-  font-size: 1.4rem;
-  color: var(--primary-dark);
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-}
-
-.highlights-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
-.highlight-card {
-  padding: 1.5rem;
-  background: white;
-  border-radius: 6px;
-  border-top: 3px solid var(--primary);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-}
-
-.highlight-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-}
-
-.highlight-card h4 {
-  font-family: "Outfit", sans-serif;
-  color: var(--primary);
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  margin-top: 0;
-}
-
-.highlight-card p {
-  font-size: 0.9rem;
-  color: var(--text-medium);
-  margin: 0;
-  line-height: 1.5;
-}
-
-/* Equipamentos Section */
-#linhasPesquisaPainel {
-  padding: 4rem 2rem;
-  background: white;
-  scroll-margin-top: 80px;
-}
-
-#linhasPesquisaPainel .container {
-  margin-bottom: 3rem;
-}
-
-/* Responsividade Research Section */
-@media (max-width: 1024px) {
-  .research-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .highlights-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .research-section {
-    padding: 2rem 1rem;
-  }
-
-  .research-content {
-    gap: 1.5rem;
-  }
-
-  .research-text p {
-    font-size: 0.95rem;
-  }
-
-  .research-highlights {
-    padding: 1.5rem;
-  }
-
-  #linhasPesquisaPainel {
-    padding: 2rem 1rem;
-  }
-
-  .c-grid,
-  .p-grid,
-  .d-grid,
-  .m-grid,
-  .ic-grid {
-    padding: 0 10px;
-  }
-
-  .member-card {
-    gap: 1rem;
-    padding: 1rem;
-  }
-
-  .member-photo {
-    width: 80px;
-    height: 80px;
-    min-width: 80px;
-  }
-
-  .member-name {
-    font-size: 1rem;
-  }
-
-  .member-description {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
-
-  .member-contact {
-    gap: 0.6rem;
-  }
-
-  .contact-icon {
-    width: 28px;
-    height: 28px;
-  }
-
-  .info-grid {
-    padding: 1rem;
-    gap: 1rem;
-  }
-
-  .info-grid .member-photo {
-    width: 50px;
-    height: 50px;
-    min-width: 50px;
-  }
-
-  .info-grid .member-name {
-    font-size: 0.95rem;
-  }
-
-  .info-grid .member-description {
-    font-size: 0.8rem;
-    margin: 0;
-  }
-}
-
-/* Responsividade */
-
-/* BREAKPOINT: 1024px (tablets landscape e desktops pequenos) */
-@media (max-width: 1024px) {
-  .noticias-scroll .noticia-card {
-    width: 400px;
-  }
-
-  .noticias-content {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .mobile-menu-btn {
-    display: block; /* Mostra o botão hambúrguer */
-  }
-
-  #menuHeader {
-    display: none !important; /* Esconde o menu de texto por padrão */
-  }
-
-  #menuHeader.mobile-menu-active {
-    display: flex !important;
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
-  }
-
-  .dropdown-gaveta {
-    right: auto;
-    left: 0;
-  }
-
-  .hero-container {
-    gap: 2rem;
-    padding-left: 20px;
-    padding-right: 20px;
-    min-height: 560px;
-  }
-
-  .hero-content {
-    min-width: 0;
-  }
-
-  .hero-title {
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-  }
-
-  .ptext {
-    font-size: 1rem;
-  }
-
-  .links-externos-coordenador {
-    justify-content: center;
-  }
-
-  #coordenador {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  #perfil-img {
-    width: 200px;
-  }
-
-  .card-equipamentos {
-    grid-template-columns: 1fr;
-  }
-
-  .research-content {
-    grid-template-columns: 1fr;
-  }
-
-  .highlights-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* style.css - Dentro do @media (max-width: 1024px) */
-  #menuHeader.mobile-menu-active {
-    display: flex !important;
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
-    flex-direction: column;
-    background: white;
-    border-bottom: 1px solid var(--border-color);
-    padding: 1rem 2rem;
-    width: 100%;
-    box-sizing: border-box;
-
-    /* Adicione isto para garantir que fique na frente */
-    z-index: 9999;
   }
 }
 
@@ -2751,7 +2466,57 @@ footer p {
   }
 }
 
-/* animação da setinha da timeline */
+/* ===== 10. ANIMAÇÕES (CENTRALIZADAS) ===== */
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes animate {
   0% {
     opacity: 0;
@@ -2764,6 +2529,68 @@ footer p {
     opacity: 0;
     transform: rotate(45deg) translate(20px, 20px);
   }
+}
+
+/* Aplicações de animações */
+.hero-content {
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+.hero-img {
+  animation: fadeInRight 0.8s ease forwards;
+}
+
+.arrow-scroll {
+  animation: bounce 2s ease infinite;
+  animation-delay: 0.3s;
+}
+
+.member-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.member-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.member-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.member-card:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.member-card:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.member-card:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+.member-card:nth-child(n + 6) {
+  animation-delay: 0.3s;
+}
+
+#timeline-arrow {
+  animation: animate 2s ease infinite;
+}
+
+#timeline-arrow div {
+  animation: animate 2s ease infinite;
+}
+
+#timeline-arrow div:nth-child(1) {
+  animation-delay: 0s;
+}
+
+#timeline-arrow div:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+#timeline-arrow div:nth-child(3) {
+  animation-delay: 0.5s;
 }
 
 .timeline-horizontal.active {
