@@ -1,3 +1,21 @@
+/* =============================================================================================
+   STYLE.CSS - GRUPO CROMATOGRAFIA | SITE POA
+   ===========================================================================================
+   ESTRUTURA:
+   1. IMPORTS & FONTES
+   2. RESET & CONFIGURAÇÕES BÁSICAS
+   3. TIPOGRAFIA & ELEMENTOS CORE
+   4. HEADER & NAVEGAÇÃO
+   5. HERO SECTION (COMUM A TODAS AS PÁGINAS)
+   6. SEÇÕES DO INDEX.HTML
+   7. SEÇÕES DOS LAB PAGES (lat.html, croma.html, lanagua.html, labpoa.html, labitech.html)
+   8. SEÇÕES DO EQUIPE.HTML
+   9. SEÇÕES COMUNS (COORDENAÇÃO, FOOTER, BOTÃO FLUTUANTE)
+   10. MEDIA QUERIES (RESPONSIVIDADE)
+   11. ANIMAÇÕES (CENTRALIZADAS)
+   ============================================================================================= */
+
+/* ===== 1. IMPORTS & FONTES ===== */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap");
 
 .material-symbols-outlined {
@@ -8,17 +26,20 @@
     "opsz" 24;
 }
 
-/* Reset e configurações básicas */
+/* ===== 2. RESET & CONFIGURAÇÕES BÁSICAS ===== */
+/* Remove margens e paddings padrão, garante box-sizing consistente */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Smooth scrolling para navegação */
 html {
   scroll-behavior: smooth;
 }
 
+/* Resetar body com font family base */
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
@@ -26,14 +47,14 @@ body {
   overflow-x: hidden;
 }
 
-/* Prevent any element from causing horizontal overflow */
+/* Impedir overflow horizontal */
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
 }
 
-/* Ensure media scale within viewport */
+/* Media responsivas - garantir que se ajustem dentro do viewport */
 img,
 svg,
 picture {
@@ -42,13 +63,15 @@ picture {
   display: block;
 }
 
+/* ===== 3. TIPOGRAFIA & ELEMENTOS CORE ===== */
 /* Container padrão */
 .container {
   margin: 0 auto;
   width: 100%;
 }
 
-/* Header */
+/* ===== 4. HEADER & NAVEGAÇÃO ===== */
+/* Header fixo com backdrop blur */
 #header-div {
   position: fixed;
   top: 0;
@@ -67,27 +90,18 @@ picture {
   left: auto;
 }
 
-/* style.css - Linha 67 a 75 aprox. */
+/* Content container com flex layout */
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   min-width: 0;
-
-  /* REMOVA ou COMENTE esta linha: */
-  /* overflow: hidden; */
-
-  /* ALTERE PARA: */
   overflow: visible !important;
-}
-
-#header-div,
-.header-content {
   max-width: 100%;
-  overflow-x: visible !important; /* Mude para visible ou apague esta linha */
 }
 
+/* Logo Header */
 #logoHeader {
   display: flex;
   align-items: center;
@@ -117,19 +131,18 @@ picture {
   display: block;
 }
 
+/* Menu Principal */
 .menu {
   display: flex;
   list-style: none;
   gap: 2rem;
 }
 
-/* dropdown menu */
-
-/* 1. Prepara o item pai para segurar a gaveta */
 .menu li {
-  position: relative; /* Importante: torna o pai a referência */
+  position: relative;
 }
 
+/* Menu Dropdown */
 .dropdown-gaveta {
   position: absolute;
   top: 100%;
@@ -172,6 +185,7 @@ picture {
   color: var(--primary);
 }
 
+/* Links do menu */
 .menu a {
   text-decoration: none;
   color: var(--text-dark);
@@ -184,6 +198,7 @@ picture {
   color: var(--primary);
 }
 
+/* Underline animado nos links do menu */
 .menu a::after {
   content: "";
   position: absolute;
@@ -199,6 +214,7 @@ picture {
   width: 100%;
 }
 
+/* Botão hambúrguer (mobile) */
 .mobile-menu-btn {
   display: none;
   background: none;
@@ -208,7 +224,7 @@ picture {
   margin-left: auto;
 }
 
-/* Menu visibility toggle */
+/* Menu Mobile - Ativo */
 #menuHeader.mobile-menu-active {
   display: flex !important;
   position: absolute;
@@ -233,7 +249,7 @@ picture {
   flex-shrink: 0;
 }
 
-/* Hero Section */
+/* ===== 5. HERO SECTION (COMUM) ===== */
 #hero {
   display: flex;
   align-items: center;
@@ -316,7 +332,8 @@ picture {
   display: block;
   object-fit: cover;
   overflow: hidden;
-  object-position: left center;
+  object-position: center;
+}
 }
 
 /* Seção Sobre Nós */
@@ -410,11 +427,7 @@ picture {
   background: var(--primary-dark);
 }
 
-.noticias-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-/* Grid de Notícias - Página de Notícias */
+/* Grid de Notícias - Página de Notícias (noticias.html) */
 .noticias-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -523,7 +536,7 @@ picture {
   transition: opacity 0.3s ease;
 }
 
-/* Seção Contato - tem que ajustar o tamanho da seção hero*/
+/* --- Contato (Index) --- */
 #contato-index {
   padding: 6rem;
   display: flex;
@@ -566,21 +579,12 @@ picture {
   padding: 0 20px;
 } /* antes */
 
-#textcontato:focus {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  background: white;
-} /* depois */
-
 #textcontato::placeholder {
   text-align: left;
   vertical-align: top;
 }
 
-/* Seção linhasPesquisa v2 */
-
+/* --- Linhas de Pesquisa (Index) --- */
 #linhasPesquisa {
   width: 100%;
   min-height: 420px;
@@ -622,6 +626,7 @@ picture {
   overflow: hidden;
 }
 
+/* melhor não alterar, risco de quebra (Swiper.js dependency) */
 #filtro {
   content: "";
   position: absolute;
@@ -673,8 +678,7 @@ picture {
   background: #06335a !important;
 }
 
-/* Seção de publicações (livros) v2 */
-
+/* --- Publicações / Livros (Index) --- */
 #publicacoes {
   width: 100%;
   min-height: 480px;
@@ -696,8 +700,7 @@ picture {
   margin-top: 50px;
 }
 
-/* a galerialivros não tá no ideal, a IA disse que ele tá dependendo do swiper pra conseguir o tamanho certo, mas eu não vou refatorar agora porque já tá funcionando */
-
+/* melhor não alterar, risco de quebra (Swiper.js dependency - layout calculado pelo JS) */
 .galeria-livros .swiper-slide {
   /* ele não aplica os atributos às duas classes ao mesmo tempo aqui, ele aplica à classe swiperslide de dentro do galeria livros */
   background: #fff;
@@ -730,7 +733,7 @@ picture {
   will-change: transform;
 }
 
-/* Container que alinha os botões lado a lado */
+/* Botões de navegação da galeria */
 #previous-next-livros {
   display: flex;
   justify-content: center;
@@ -771,7 +774,6 @@ picture {
   color: #ffffff;
 }
 
-/* Ajuste das setinhas (ícones) */
 #previous-next-livros .swiper-button-prev::after,
 #previous-next-livros .swiper-button-next::after {
   color: #111111;
@@ -834,11 +836,7 @@ picture {
   border-radius: 12px;
 }
 
-/* timelinev3 */
-:root {
-  --primary-color: #c4c5c7;
-}
-
+/* --- Timeline / Publicações (Labs) --- */
 #timeline {
   scroll-margin-top: 100px;
 }
@@ -985,16 +983,7 @@ picture {
   opacity: 0.9;
 }
 
-/* setinha da timeline */
-
-#timeline-arrow div:nth-child(2) {
-  animation-delay: -0.2s;
-}
-
-#timeline-arrow div:nth-child(3) {
-  animation-delay: -0.4s;
-}
-
+/* Setinha animada do timeline */
 #timeline-arrow {
   position: absolute;
   top: 85%;
@@ -1043,6 +1032,7 @@ picture {
   font-size: clamp(2rem, 4vw, 3rem);
   color: var(--primary-dark);
   font-weight: 400;
+  margin-bottom: 20px;
 }
 
 /* --- MUDANÇA PRINCIPAL AQUI --- */
