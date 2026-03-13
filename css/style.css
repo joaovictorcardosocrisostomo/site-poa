@@ -987,29 +987,9 @@ picture {
   position: absolute;
   top: 85%;
   left: 5%;
-  transform: translate(-50%, -50%);
-  transform: rotate(-90deg);
+  transform: translate(-50%, -50%) rotate(-90deg);
   /* cursor: pointer; */
   z-index: 1000;
-}
-
-#timeline-arrow div {
-  display: block;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-bottom: 5px solid white;
-  border-right: 5px solid white;
-  transform: rotate(45deg);
-  margin: -10px;
-  animation: animate 2s infinite;
-}
-
-#timeline-arrow div:nth-child(2) {
-  animation-delay: -0.2s;
-}
-
-#timeline-arrow div:nth-child(3) {
-  animation-delay: -0.4s;
 }
 
 /* Seção Coordenador */
@@ -1182,6 +1162,118 @@ footer p {
   height: 20px;
   filter: brightness(0) invert(1);
   transform: rotate(180deg);
+}
+
+/* ==================== SEÇÃO DE PESQUISA E EQUIPAMENTOS (Labs) ==================== */
+
+.research-section {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+#research-section {
+  width: 100%;
+  height: auto;
+  scroll-margin-top: 100px;
+}
+
+#research-container {
+  padding: 30px;
+}
+
+#research-section h2 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--primary-dark);
+  font-weight: 400;
+}
+
+.research-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+.research-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.research-text p {
+  font-size: 1.05rem;
+  color: var(--text-medium);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.research-text strong {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.research-highlights {
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
+  border-left: 4px solid var(--primary);
+  border-radius: 8px;
+}
+
+.research-highlights h3 {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.4rem;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.highlight-card {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 6px;
+  border-top: 3px solid var(--primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.highlight-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-card h4 {
+  font-family: "Outfit", sans-serif;
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.highlight-card p {
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Equipamentos Section */
+#linhasPesquisaPainel {
+  padding: 4rem 2rem;
+  background: white;
+  scroll-margin-top: 80px;
+}
+
+#linhasPesquisaPainel .container {
+  margin-bottom: 3rem;
 }
 
 /* ==================== ESTILIZAÇÃO DE MEMBROS ==================== */
@@ -1563,6 +1655,26 @@ footer p {
 }
 
 @media (max-width: 768px) {
+  .research-section {
+    padding: 2rem 1rem;
+  }
+
+  .research-content {
+    gap: 1.5rem;
+  }
+
+  .research-text p {
+    font-size: 0.95rem;
+  }
+
+  .research-highlights {
+    padding: 1.5rem;
+  }
+
+  #linhasPesquisaPainel {
+    padding: 2rem 1rem;
+  }
+
   .titulo-pesquisas {
     font-size: 2rem;
   }
@@ -2572,12 +2684,15 @@ footer p {
   animation-delay: 0.3s;
 }
 
-#timeline-arrow {
-  animation: animate 2s ease infinite;
-}
-
 #timeline-arrow div {
-  animation: animate 2s ease infinite;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-bottom: 5px solid white;
+  border-right: 5px solid white;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
 }
 
 #timeline-arrow div:nth-child(1) {
@@ -2585,11 +2700,11 @@ footer p {
 }
 
 #timeline-arrow div:nth-child(2) {
-  animation-delay: 0.25s;
+  animation-delay: -0.2s;
 }
 
 #timeline-arrow div:nth-child(3) {
-  animation-delay: 0.5s;
+  animation-delay: -0.4s;
 }
 
 .timeline-horizontal.active {
